@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            
+            <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="css/galgje.css">
+            <title>Galgje</title>
+      </head>
+      <body onload="pageLoad()">
+            <div id="pseudo-body">
+                  <div class="container">
+                        <div class="row justify-content-center">
+                              <div class="col-12-lg">
+                                    <h1>HANGMAN</h1>
+                              </div>
+                        </div>
+                        <div class="superdiv row justify-content-center">
+                              <div class="col-12-lg">
+                                    <!--Displayed as long as game lasts. Disappears when game has ended.-->
+                                    <span id="score">You have <span id="penalties">10</span> lives left.</span>
+
+                                    <!--Displayed once game has ended.-->
+                                    <span id="end"></span>
+                              </div>
+                        </div>
+                        <div class="row justify-content-center">
+                              <img id="image" src="css/assets/hangman0.png">
+                        </div>
+                        <div class="specialrow row justify-content-center">
+                              <div id="class="col-12-lg">
+                                    <h1 id="display"></h1>
+                              </div>
+                        </div>
+                        <div class="superdiv row justify-content-center">
+
+                              <div id="startgame">
+                                    <button id="startbutton">Start game</button>
+                              </div>
+
+                              <!--Displayed upon init. Disappears once word has been entered.-->
+                              <div id="gameonword">
+                                    <input type="password" id="word" onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" placeholder="Choose a word." minlength="1" maxlength="11" required>
+                                    <button id="wordbutton">Enter</button>
+                              </div>
+
+                              <!--Displayed once word has been entered.-->
+                              <div id="gameonletter">
+                                    <input id="letter" type="text" onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" placeholder="Choose a letter."  minlength="1" maxlength="1" required>
+                                    <button id="letterbutton">Guess</button>
+                              </div>
+
+                              <div id="retry">
+                                    <button id="retrybutton">Try again?</button>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <script type="text/javascript" src="js/galgje.js"></script>
+      </body>
+</html>
